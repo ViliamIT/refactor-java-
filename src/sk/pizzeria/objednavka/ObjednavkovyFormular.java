@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ObjednavkovyFormular {
-    private  List<ObjednavkovyFormularPolozka> polozky = new ArrayList<ObjednavkovyFormularPolozka>();
+	private List<ObjednavkovyFormularPolozka> polozky = new ArrayList<ObjednavkovyFormularPolozka>();
 
-    public List<ObjednavkovyFormularPolozka> getPolozky() {
-        return polozky;
-    }
+	public List<ObjednavkovyFormularPolozka> getPolozky() {
+		return polozky;
+	}
 
-    public void setPolozky(List<ObjednavkovyFormularPolozka> polozky) {
-        this.polozky = polozky;
-    }
+	public void setPolozky(List<ObjednavkovyFormularPolozka> polozky) {
+		this.polozky = polozky;
+	}
 }

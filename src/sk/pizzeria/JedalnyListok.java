@@ -1,25 +1,29 @@
 package sk.pizzeria;
 
-import sk.pizzeria.utils.Logger;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class JedalnyListok {
-    private List<JedalnyListokPolozka> polozky = new ArrayList<JedalnyListokPolozka>();
+	private static Logger LOG = LoggerFactory.getLogger(PizzeriaApp.class);
 
-    public List<JedalnyListokPolozka> getPolozky() {
-        return polozky;
-    }
+	private List<JedalnyListokPolozka> polozky = new ArrayList<JedalnyListokPolozka>();
 
-    public void setPolozky(List<JedalnyListokPolozka> polozky) {
-        this.polozky = polozky;
-    }
+	public List<JedalnyListokPolozka> getPolozky() {
+		return polozky;
+	}
 
-    public void vypisJedalnyListok() {
-        int index =0;
-        for(JedalnyListokPolozka p : polozky) {
-            Logger.log(index++ + ". " + "pizza: " + p.getPizza().getNazov() + " ..." + " cena: " + p.getPizza().getCena() + " EUR");
-        }
-    }
+	public void setPolozky(List<JedalnyListokPolozka> polozky) {
+		this.polozky = polozky;
+	}
+
+	public void vypisJedalnyListok() {
+		int index = 0;
+		for (JedalnyListokPolozka p : polozky) {
+			LOG.info(index++ + ". " + "pizza: " + p.getProdukt().getNazov() + " ..." + " cena: "
+					+ p.getProdukt().getCena() + " EUR");
+		}
+	}
 }

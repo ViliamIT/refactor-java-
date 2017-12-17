@@ -1,44 +1,24 @@
 package sk.pizzeria.pizza;
 
-public abstract class Pizza {
-	private String nazov;
-	private String popis;
-	private float cena;
+import sk.pizzeria.produkt.Produkt;
+
+public abstract class Pizza extends Produkt {
+	private String recept;
 
 	public Pizza(String nazov, String popis, float cena) {
-		this.nazov = nazov;
-		this.popis = popis;
-		this.cena = cena;
+		super(nazov, popis, cena);
 	}
 
 	public Pizza() {
 		super();
 	}
 
-
-
-	public String getNazov() {
-		return nazov;
+	public String getRecept() {
+		return recept;
 	}
 
-	public void setNazov(String nazov) {
-		this.nazov = nazov;
-	}
-
-	public String getPopis() {
-		return popis;
-	}
-
-	public void setPopis(String popis) {
-		this.popis = popis;
-	}
-
-	public float getCena() {
-		return cena;
-	}
-
-	public void setCena(float cena) {
-		this.cena = cena;
+	public void setRecept(String recept) {
+		this.recept = recept;
 	}
 
 	@Override

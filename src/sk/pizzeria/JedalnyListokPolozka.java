@@ -1,17 +1,15 @@
 package sk.pizzeria;
 
-import sk.pizzeria.pizza.Pizza;
+import sk.pizzeria.produkt.Produkt;
 
 public class JedalnyListokPolozka {
-    private Pizza pizza;
+	private Produkt produkt;
 
-    public JedalnyListokPolozka(Pizza pizza) {
-        this.pizza = pizza;
-    }
+	public JedalnyListokPolozka(Produkt produkt) {
+		this.produkt = produkt;
+	}
 
-    public Pizza getPizza() {
-        return pizza;
-    }
+	public Produkt getProdukt() {
+		return produkt;
+	}
 }
-
-

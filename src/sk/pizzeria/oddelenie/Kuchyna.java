@@ -1,24 +1,28 @@
 package sk.pizzeria.oddelenie;
 
+import sk.pizzeria.PizzeriaApp;
 import sk.pizzeria.objednavka.Objednavka;
 import sk.pizzeria.objednavka.ObjednavkaPolozka;
 import sk.pizzeria.objednavka.StavObjednavky;
-import sk.pizzeria.utils.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Kuchyna extends Oddelenie {
 
-    public Kuchyna(String nazov) {
-        super(nazov);
-    }
+	private static Logger LOG = LoggerFactory.getLogger(PizzeriaApp.class);
 
-    public void pripravPizzu(Objednavka objednavka) {
-        objednavka.setStav(StavObjednavky.PRIPRAVUJE_SA);
-        Logger.log("Kuchyna: Pizza z objednavky sa pripravuje ...");
-        for (ObjednavkaPolozka o : objednavka.getZoznamPoloziek()) {
-            Logger.log("Kuchyna: peciem " + o.getPizza().toString() + ", pocet kusov: " + o.getPocet());
-        }
+	public Kuchyna(String nazov) {
+		super(nazov);
+	}
 
-        objednavka.setStav(StavObjednavky.PRIPRAVENA);
-        Logger.log("Kuchyna: Pizza z objednavky je pripravena.");
-    }
+	public void pripravPizzu(Objednavka objednavka) {
+		objednavka.setStav(StavObjednavky.PRIPRAVUJE_SA);
+		LOG.info("Kuchyna: Pizza z objednavky sa pripravuje ...");
+		for (ObjednavkaPolozka o : objednavka.getZoznamPoloziek()) {
+			LOG.info("Kuchyna: peciem " + o.getProdukt().toString() + ", pocet kusov: " + o.getPocet());
+		}
+
+		objednavka.setStav(StavObjednavky.PRIPRAVENA);
+		LOG.info("Kuchyna: Pizza z objednavky je pripravena.");
+	}
 }

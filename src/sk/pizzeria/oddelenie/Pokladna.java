@@ -1,19 +1,23 @@
 package sk.pizzeria.oddelenie;
 
+import sk.pizzeria.PizzeriaApp;
 import sk.pizzeria.objednavka.Objednavka;
 import sk.pizzeria.objednavka.StavObjednavky;
-import sk.pizzeria.utils.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Pokladna extends Oddelenie {
 
-    private float ucet;
+	private static Logger LOG = LoggerFactory.getLogger(PizzeriaApp.class);
 
-    public Pokladna(String nazov) {
-        super(nazov);
-    }
+	private float ucet;
 
-    public void prijatPlatbu(Objednavka objednavka) {
-        Logger.log("Pokladna: Platba za pizzu prijata");
-        objednavka.setStav(StavObjednavky.ZAPLATENA);
-    }
+	public Pokladna(String nazov) {
+		super(nazov);
+	}
+
+	public void prijatPlatbu(Objednavka objednavka) {
+		LOG.info("Pokladna: Platba za pizzu prijata");
+		objednavka.setStav(StavObjednavky.ZAPLATENA);
+	}
 }
